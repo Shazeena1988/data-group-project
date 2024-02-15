@@ -1,13 +1,7 @@
-
-Name: Shazeena
-Item: ['Mocha']
-Amount: £2.70
-Date and Time: 15-02-2024-- 10:15:47
-------------------------------------
-
-Name: Liam
-Item: ['Tea', 'Hot chocolate']
-Amount: £3.20
-Date and Time: 15-02-2024-- 10:17:03
+Name: Shazeena Hussain
+Items:
+- 2 Americano
+Amount: £4.40
+Date and Time: 15-02-2024-- 11:16:20
 ------------------------------------
 
