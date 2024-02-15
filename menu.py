@@ -36,7 +36,7 @@ extras = {
     "Salami 1 slice": 0.50,
     "Salad": 0.70
 }
-
+final_order = []
 def start():
     while True:
         customer_name = input("Hello and welcome to Brian's Bistro, please can I take your name: ")
@@ -71,38 +71,43 @@ def start():
         order_count = int(input("How many would you like: "))
         total_cost += menu[order_input] * order_count
         print(Fore.GREEN + f"{order_count} {order_input}(s) have been added to your order. Current total: £{total_cost:.2f}")
+        final_order.append(order_input)
 
         extra_order = input("Would you like to add any extras? (y/n): ")
-        if extra_order.lower() == 'y':
+        if extra_order.lower() == "y":
             print("Available extras:")
             for extra in extras:
                 print(f"- {extra}: £{extras[extra]:.2f}")
             while True:
-                chosen_extra = input("Enter the name of the extra you'd like to add, or 'finished' to finish: ").capitalize()
-                if chosen_extra == 'Finished':
+                chosen_extra = input("Enter the name of the extra you'd like to add, or 'finished' to finish adding extras: ").capitalize()
+                if chosen_extra == "Finished":
                     break
                 elif chosen_extra in extras:
                     total_cost += extras[chosen_extra]
                     print(Fore.GREEN + f"{chosen_extra} has been added to your order. Current total: £{total_cost:.2f}")
                 else:
                     print(Fore.RED + "Sorry, that extra is not available.")
-        elif extra_order.lower() != 'n' and extra_order.lower() != 'y':
+        elif extra_order.lower() != "n" and extra_order.lower() != "y":
             print(Fore.RED + "Invalid input. Please enter 'y' or 'n'.")
 
         next_order = input("Would you like to add another item to you order? (y/n) or 'restart' to cancel all items and start again: ")
-        if next_order.lower() == 'n':
+        if next_order.lower() == "n":
             break
-        elif next_order.lower() == 'restart':
+        elif next_order.lower() == "restart":
             total_cost = 0
             start()
 
-    with open("receipts.txt", "a", encoding="utf-8") as f:
-        f.write(f"{customer_name} - Order: {(order_input)} - Total: £{total_cost:.2f} - Date and Time: {current_datetime}\n")
-        f.close()
-        f = open("receipts.txt", "r")
-        print(f.read())
+    final_order_str = str(final_order)
 
     print(Fore.BLUE + f"Here is your order {customer_name} The total is £{total_cost:.2f}. Thank you for visiting Brian's Bistro, have a good day")
-    print(Fore.BLUE + f"Date and Time: {current_datetime}")
+    print(Fore.BLUE + f"Date and Time: {current_datetime}")    
+
+    f = open("receipts.txt", "a", encoding="utf-8")
+    f.write("Name: " + customer_name + "\n")
+    f.write("Item: " + final_order_str + "\n")
+    f.write(f"Amount: £{total_cost:.2f}\n")
+    f.write("Date and Time: " + current_datetime + "\n")
+    f.write("------------------------------------" + "\n\n")
+    f.close()
 
 start()
