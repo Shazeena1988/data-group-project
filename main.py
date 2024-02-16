@@ -25,14 +25,14 @@ menu = {                    #dictionary containing food menu items and associate
     "Cappuccino": 1.90,
     "Mocha": 2.00,
     "Hot chocolate": 2.20,
-    "Bottled Water" : 1.00,
+    "Bottled water" : 1.00,
     "Croissant": 1.50,
     "Muffin": 2.10,
     "Toast": 1.00,
     "Panini": 2.90,
-    "Buttered Roll": 0.70,
+    "Buttered roll": 0.70,
     "Stroopwafel": 0.50,
-    "Potato Cake": 1.00
+    "Potato cake": 1.00
 }
                              
 extras = {                  #Dictionary containing extra menu items and associated prices

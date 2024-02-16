@@ -1,7 +1,7 @@
 Name: Shazeena Hussain
 Items:
-- 2 Americano
-Amount: £4.40
-Date and Time: 15-02-2024-- 11:16:20
+- 1 Croissant
+Amount: £2.20
+Date and Time: 16-02-2024-- 10:27:30
 ------------------------------------
 
