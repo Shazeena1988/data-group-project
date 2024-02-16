@@ -1,7 +1,7 @@
 Name: Shazeena Hussain
 Items:
-- 1 Croissant
-Amount: £2.20
-Date and Time: 16-02-2024-- 10:27:30
+- 1 Tea
+Amount: £1.00
+Date and Time: 16-02-2024-- 10:34:12
 ------------------------------------
 
